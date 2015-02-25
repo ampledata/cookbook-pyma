@@ -45,7 +45,7 @@ end
 
 # Make install:
 execute 'make install multimon-ng' do
-  command 'make install multimon-ng'
+  command 'make install'
   action :nothing
   cwd '/usr/local/multimon-ng'
 end

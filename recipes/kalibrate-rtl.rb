@@ -47,7 +47,7 @@ end
 
 
 execute 'make install kalibrate-rtl' do
-  command 'make install kalibrate-rtl'
+  command 'make install'
   action :nothing
   cwd '/usr/local/kalibrate-rtl'
 end
