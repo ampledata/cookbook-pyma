@@ -39,7 +39,7 @@ end
 
 
 execute 'configure kalibrate-rtl' do
-  command './configure kalibrate-rtl'
+  command './configure'
   action :nothing
   cwd '/usr/local/kalibrate-rtl'
   notifies :run, 'execute[make kalibrate-rtl]'
