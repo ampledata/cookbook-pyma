@@ -21,5 +21,25 @@ end
 
 ark 'rtl-sdr' do
   url 'http://git.osmocom.org/rtl-sdr/snapshot/rtl-sdr-0.5.3.tar.gz'
-  action :install_with_make
+  action :install
+  notifies :run, 'execute[cmake rtl-sdr]'
 end
+
+
+execute 'cmake rtl-sdr' do
+  command 'cmake -DINSTALL_UDEV_RULES=ON'
+  action :nothing
+  cwd '/usr/local/rtl-sdr'
+  notifies :run, 'execute[make install rtl-sdr]'
+end
+
+
+execute 'make install rtl-sdr' do
+  command 'make install rtl-sdr'
+  action :nothing
+  cwd '/usr/local/rtl-sdr'
+  notifies :run, 'execute[ldconfig]'
+end
+
+
+execute 'ldconfig' { action :nothing }
