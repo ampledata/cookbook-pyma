@@ -1,25 +1,25 @@
 {
-    "callsign": "<% node['pymultimonaprs']['callsign'] %>",
-    "passcode": "12345",
-    "gateway": "noam.aprs2.net:14580",
-    "append_callsign": true,
-    "source": "rtl",
+    "callsign": "<%= node['pymultimonaprs']['callsign'] %>",
+    "passcode": "<%= node['pymultimonaprs']['passcode'] %>",
+    "gateway": "<%= node['pymultimonaprs']['passcode'] %>",
+    "append_callsign": <%= node['pymultimonaprs']['append_callsign'] %>,
+    "source": "<%= node['pymultimonaprs']['append_callsign'] %>",
     "rtl": {
-        "freq": 144.390,
-        "ppm": 4.384,
-        "gain": 0,
-        "offset_tuning": false,
-        "device_index": 0
+        "freq": <%= node['pymultimonaprs']['append_callsign'] %>,
+        "ppm": <%= node['pymultimonaprs']['ppm'] %>,
+        "gain": <%= node['pymultimonaprs']['append_callsign'] %>,
+        "offset_tuning": <%= node['pymultimonaprs']['append_callsign'] %>,
+        "device_index": <%= node['pymultimonaprs']['append_callsign'] %>
     },
     "alsa": {
-        "device": "default"
+        "device": "<%= node['pymultimonaprs']['append_callsign'] %>"
     },
     "beacon": {
-        "lat": 37.763166,
-        "lng": -122.419,
-        "table": "/",
-        "symbol": "&",
-        "comment": "PyMultimonAPRS iGate",
+        "lat": <%= node['pymultimonaprs']['append_callsign'] %>,
+        "lng": <%= node['pymultimonaprs']['append_callsign'] %>,
+        "table": "<%= node['pymultimonaprs']['append_callsign'] %>",
+        "symbol": "<%= node['pymultimonaprs']['append_callsign'] %>",
+        "comment": "<%= node['pymultimonaprs']['append_callsign'] %>",
         "status": {
             "text": "Running on Raspberry Pi with RTL dongle.",
             "file": false
