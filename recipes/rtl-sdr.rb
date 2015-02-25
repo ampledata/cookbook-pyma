@@ -42,4 +42,6 @@ execute 'make install rtl-sdr' do
 end
 
 
-execute 'ldconfig' { action :nothing }
+execute 'ldconfig' do
+  action :nothing
+end
