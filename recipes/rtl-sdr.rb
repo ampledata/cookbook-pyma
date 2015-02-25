@@ -21,5 +21,5 @@ end
 
 ark 'rtl-sdr' do
   url 'http://git.osmocom.org/rtl-sdr/snapshot/rtl-sdr-0.5.3.tar.gz'
-  action :install
+  action :install_with_make
 end
