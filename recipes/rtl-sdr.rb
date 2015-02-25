@@ -35,7 +35,7 @@ end
 
 
 execute 'make install rtl-sdr' do
-  command 'make install rtl-sdr'
+  command 'make install'
   action :nothing
   cwd '/usr/local/rtl-sdr'
   notifies :run, 'execute[ldconfig]'
