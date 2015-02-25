@@ -39,11 +39,18 @@ execute 'qmake multimon-ng' do
   command 'qmake-qt4 multimon-ng.pro'
   action :nothing
   cwd '/usr/local/multimon-ng'
+  notifies :run, 'execute[make multimon-ng]'
+end
+
+
+execute 'make multimon-ng' do
+  command 'make'
+  action :nothing
+  cwd '/usr/local/multimon-ng'
   notifies :run, 'execute[make install multimon-ng]'
 end
 
 
-# Make install:
 execute 'make install multimon-ng' do
   command 'make install'
   action :nothing
