@@ -1,3 +1,7 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+#
+# Enables pymultimonaprs service.
 #
 # Recipe:: service
 # Cookbook:: pymultimonaprs
@@ -10,7 +14,15 @@
 
 include_recipe 'supervisor'
 
+
+pmma_path = File.join(
+  node['pymultimonaprs']['virtualenv_path'], 'bin', 'pymultimonaprs'
+)
+
+service_cmd = [pmma_path, '--syslog -c /etc/pymultimonaprs.json'].join(' ')
+
+
 supervisor_service 'pymultimonaprs' do
-  command '/srv/pymultimonaprs/bin/pymultimonaprs --syslog -c /etc/pymultimonaprs.json'
+  command service_cmd
   action :enable
 end

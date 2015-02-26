@@ -19,6 +19,9 @@ include_recipe 'ark'
 include_recipe 'build-essential'
 
 
+multimon_ng_path = '/usr/local/multimon-ng'
+
+
 # Build pre-requisites:
 ['qt4-qmake', 'libpulse-dev', 'libx11-dev'].each do |pkg|
   package pkg
@@ -38,7 +41,7 @@ end
 execute 'qmake multimon-ng' do
   command 'qmake-qt4 multimon-ng.pro'
   action :nothing
-  cwd '/usr/local/multimon-ng'
+  cwd multimon_ng_path
   notifies :run, 'execute[make multimon-ng]'
 end
 
@@ -46,7 +49,7 @@ end
 execute 'make multimon-ng' do
   command 'make'
   action :nothing
-  cwd '/usr/local/multimon-ng'
+  cwd multimon_ng_path
   notifies :run, 'execute[make install multimon-ng]'
 end
 
@@ -54,5 +57,5 @@ end
 execute 'make install multimon-ng' do
   command 'make install'
   action :nothing
-  cwd '/usr/local/multimon-ng'
+  cwd multimon_ng_path
 end

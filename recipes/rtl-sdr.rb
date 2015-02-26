@@ -14,6 +14,9 @@ include_recipe 'ark'
 include_recipe 'build-essential'
 
 
+rtl_sdr_path = '/usr/local/rtl-sdr'
+
+
 ['cmake', 'libusb-1.0-0-dev'].each do |pkg|
   package pkg
 end
@@ -29,7 +32,7 @@ end
 execute 'cmake rtl-sdr' do
   command 'cmake -DINSTALL_UDEV_RULES=ON'
   action :nothing
-  cwd '/usr/local/rtl-sdr'
+  cwd rtl_sdr_path
   notifies :run, 'execute[make install rtl-sdr]'
 end
 
@@ -37,7 +40,7 @@ end
 execute 'make install rtl-sdr' do
   command 'make install'
   action :nothing
-  cwd '/usr/local/rtl-sdr'
+  cwd rtl_sdr_path
   notifies :run, 'execute[ldconfig]'
 end
 

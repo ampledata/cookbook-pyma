@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
 #
 # Recipe:: python_packages
 # Cookbook:: pymultimonaprs
@@ -10,14 +12,13 @@
 
 include_recipe 'python'
 
+
 package 'python-pkg-resources'
 
-
-python_virtualenv '/srv/pymultimonaprs'
-
+python_virtualenv node['pymultimonaprs']['virtualenv_path']
 
 python_pip 'https://github.com/ampledata/pymultimonaprs/tarball/rewrite' do
-  virtualenv '/srv/pymultimonaprs'
+  virtualenv node['pymultimonaprs']['virtualenv_path']
   action :upgrade
   notifies :restart, 'supervisor_service[pymultimonaprs]'
 end

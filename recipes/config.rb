@@ -8,7 +8,7 @@
 #
 
 
-ruby_block 'json config' do
+ruby_block 'pymultimonaprs JSON config' do
   block do
     f = File.new(node['pymultimonaprs']['config_path'], 'w')
     f.write(node['pymultimonaprs'].to_json)

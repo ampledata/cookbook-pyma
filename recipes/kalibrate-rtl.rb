@@ -19,6 +19,9 @@ include_recipe 'ark'
 include_recipe 'build-essential'
 
 
+kalibrate_path = '/usr/local/kalibrate-rtl'
+
+
 package 'libfftw3-dev'
 
 
@@ -33,7 +36,7 @@ end
 execute 'bootstrap kalibrate-rtl' do
   command './bootstrap'
   action :nothing
-  cwd '/usr/local/kalibrate-rtl'
+  cwd kalibrate_path
   notifies :run, 'execute[configure kalibrate-rtl]'
 end
 
@@ -41,7 +44,7 @@ end
 execute 'configure kalibrate-rtl' do
   command './configure'
   action :nothing
-  cwd '/usr/local/kalibrate-rtl'
+  cwd kalibrate_path
   notifies :run, 'execute[make kalibrate-rtl]'
 end
 
@@ -49,7 +52,7 @@ end
 execute 'make kalibrate-rtl' do
   command 'make'
   action :nothing
-  cwd '/usr/local/kalibrate-rtl'
+  cwd kalibrate_path
   notifies :run, 'execute[make install kalibrate-rtl]'
 end
 
@@ -57,5 +60,5 @@ end
 execute 'make install kalibrate-rtl' do
   command 'make install'
   action :nothing
-  cwd '/usr/local/kalibrate-rtl'
+  cwd kalibrate_path
 end

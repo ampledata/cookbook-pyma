@@ -9,6 +9,7 @@
 #
 
 
+default['pymultimonaprs']['virtualenv_path'] = '/srv/pymultimonaprs'
 default['pymultimonaprs']['config_path'] = '/etc/pymultimonaprs.json'
 default['pymultimonaprs']['callsign'] = 'PYMMAP'
 default['pymultimonaprs']['passcode'] = '12345'
