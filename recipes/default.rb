@@ -8,6 +8,8 @@
 #
 
 
+include_recipe 'pymultimonaprs::_blacklist'
+
 # Pre-requisite programs:
 include_recipe 'pymultimonaprs::rtl-sdr'
 include_recipe 'pymultimonaprs::multimon-ng'
