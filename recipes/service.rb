@@ -19,7 +19,7 @@ pmma_path = File.join(
   node['pymultimonaprs']['virtualenv_path'], 'bin', 'pymultimonaprs'
 )
 
-service_cmd = [pmma_path, '--syslog -c /etc/pymultimonaprs.json'].join(' ')
+service_cmd = [pmma_path, '--syslog -v -c /etc/pymultimonaprs.json'].join(' ')
 
 
 supervisor_service 'pymultimonaprs' do
