@@ -1,11 +1,11 @@
 # encoding: utf-8
 #
-# Makefile for pymultimonaprs Cookbook.
+# Makefile for pyma Cookbook.
 #
-# Author:: Greg Albrecht W2GMD <gba@gregalbrecht.com>
-# Copyright:: Copyright 2015 OnBeep, Inc.
+# Author:: Greg Albrecht W2GMD <oss@undef.net>
+# Copyright:: Copyright 2016 Orion Labs, Inc.
 # License:: Apache License, Version 2.0
-# Source:: https://github.com/ampledata/pymultimonaprs/
+# Source:: https://github.com/ampledata/pyma/
 #
 
 
@@ -19,7 +19,7 @@ BUNDLE_EXEC ?= bundle exec
 
 KNIFE_CONFIG ?= $(HOME)/.chef/knife.rb
 
-COOKBOOK_NAME ?= pymultimonaprs
+COOKBOOK_NAME ?= pyma
 
 
 # Target groups:

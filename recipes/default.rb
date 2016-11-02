@@ -1,21 +1,21 @@
 #
 # Recipe:: default
-# Cookbook:: pymultimonaprs
-# Author:: Greg Albrecht W2GMD <gba@gregalbrecht.com>
-# Copyright:: Copyright 2015 OnBeep, Inc.
+# Cookbook:: pyma
+# Author:: Greg Albrecht W2GMD <oss@undef.net>
+# Copyright:: Copyright 2016 Orion Labs, Inc.
 # License:: Apache License, Version 2.0
-# Source:: https://github.com/ampledata/cookbook-pymultimonaprs
+# Source:: https://github.com/ampledata/cookbook-pyma
 #
 
 
-include_recipe 'pymultimonaprs::_blacklist'
+include_recipe 'pyma::_blacklist'
 
 # Pre-requisite programs:
-include_recipe 'pymultimonaprs::rtl-sdr'
-include_recipe 'pymultimonaprs::multimon-ng'
-include_recipe 'pymultimonaprs::kalibrate-rtl'
+include_recipe 'pyma::rtl-sdr'
+include_recipe 'pyma::multimon-ng'
+include_recipe 'pyma::kalibrate-rtl'
 
 # pmma itself:
-include_recipe 'pymultimonaprs::service'
-include_recipe 'pymultimonaprs::config'
-include_recipe 'pymultimonaprs::python_packages'
+include_recipe 'pyma::service'
+include_recipe 'pyma::config'
+include_recipe 'pyma::python_packages'

@@ -1,18 +1,18 @@
 #
 # Recipe:: config
-# Cookbook:: pymultimonaprs
-# Author:: Greg Albrecht W2GMD <gba@gregalbrecht.com>
-# Copyright:: Copyright 2015 OnBeep, Inc.
+# Cookbook:: pyma
+# Author:: Greg Albrecht W2GMD <oss@undef.net>
+# Copyright:: Copyright 2016 Orion Labs, Inc.
 # License:: Apache License, Version 2.0
-# Source:: https://github.com/ampledata/cookbook-pymultimonaprs
+# Source:: https://github.com/ampledata/cookbook-pyma
 #
 
 
-ruby_block 'pymultimonaprs JSON config' do
+ruby_block 'pyma JSON config' do
   block do
-    f = File.new(node['pymultimonaprs']['config_path'], 'w')
-    f.write(node['pymultimonaprs'].to_json)
+    f = File.new(node['pyma']['config_path'], 'w')
+    f.write(node['pyma'].to_json)
     f.close
   end
-  notifies :restart, 'supervisor_service[pymultimonaprs]'
+  notifies :restart, 'supervisor_service[pyma]'
 end

@@ -1,10 +1,10 @@
 #
 # Recipe:: _blacklist
-# Cookbook:: pymultimonaprs
-# Author:: Greg Albrecht W2GMD <gba@gregalbrecht.com>
-# Copyright:: Copyright 2015 OnBeep, Inc.
+# Cookbook:: pyma
+# Author:: Greg Albrecht W2GMD <oss@undef.net>
+# Copyright:: Copyright 2016 Orion Labs, Inc.
 # License:: Apache License, Version 2.0
-# Source:: https://github.com/ampledata/cookbook-pymultimonaprs
+# Source:: https://github.com/ampledata/cookbook-pyma
 #
 
 

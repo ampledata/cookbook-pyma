@@ -10,5 +10,5 @@ platforms:
 
 suites:
   - name: default
-    run_list: recipe[pymultimonaprs]
+    run_list: recipe[pyma]
     attributes:
