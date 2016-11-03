@@ -18,4 +18,4 @@ include_recipe 'pyma::kalibrate-rtl'
 # pmma itself:
 include_recipe 'pyma::service'
 include_recipe 'pyma::config'
-include_recipe 'pyma::python_packages'
+include_recipe 'pyma::app'

@@ -10,15 +10,9 @@
 #
 
 
-include_recipe 'python'
-
-
-package 'python-pkg-resources'
-
-python_virtualenv node['pyma']['virtualenv_path']
-
-python_pip 'https://github.com/ampledata/pyma/tarball/rewrite' do
-  virtualenv node['pyma']['virtualenv_path']
-  action :upgrade
+application node['pyma']['install_path'] do
+  git 'https://github.com/ampledata/pyma.git'
+  virtualenv
+  python_execute 'setup.py develop'
   notifies :restart, 'supervisor_service[pyma]'
 end

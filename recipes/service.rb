@@ -16,11 +16,10 @@ include_recipe 'supervisor'
 
 
 pmma_path = File.join(
-  node['pyma']['virtualenv_path'], 'bin', 'pyma'
+  node['pyma']['install_path'], '.virtualenv', 'bin', 'pyma'
 )
 
-service_cmd = [pmma_path, '--syslog -v -c /etc/pyma.json'].join(' ')
-
+service_cmd = [pmma_path, '-c', node['pyma']['config_path']].join(' ')
 
 supervisor_service 'pyma' do
   command service_cmd

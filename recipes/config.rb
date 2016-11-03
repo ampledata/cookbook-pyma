@@ -10,8 +10,9 @@
 
 ruby_block 'pyma JSON config' do
   block do
+    require 'json'
     f = File.new(node['pyma']['config_path'], 'w')
-    f.write(node['pyma'].to_json)
+    f.write(JSON.pretty_generate(node['pyma']))
     f.close
   end
   notifies :restart, 'supervisor_service[pyma]'
