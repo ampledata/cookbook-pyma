@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
 #
 # Recipe:: default
 # Cookbook:: pyma
@@ -8,14 +10,13 @@
 #
 
 
-include_recipe 'pyma::_blacklist'
+#include_recipe 'pyma::_blacklist'
 
-# Pre-requisite programs:
-include_recipe 'pyma::rtl-sdr'
+include_recipe 'pyma::packages'
+
 include_recipe 'pyma::multimon-ng'
 include_recipe 'pyma::kalibrate-rtl'
 
-# pmma itself:
 include_recipe 'pyma::service'
 include_recipe 'pyma::config'
 include_recipe 'pyma::app'

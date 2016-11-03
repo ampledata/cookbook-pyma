@@ -11,3 +11,4 @@
 
 
 package 'rtl-sdr'
+package 'librtlsdr-dev'

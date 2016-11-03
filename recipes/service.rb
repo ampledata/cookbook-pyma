@@ -15,11 +15,11 @@
 include_recipe 'supervisor'
 
 
-pmma_path = File.join(
+pyma_path = File.join(
   node['pyma']['install_path'], '.virtualenv', 'bin', 'pyma'
 )
 
-service_cmd = [pmma_path, '-c', node['pyma']['config_path']].join(' ')
+service_cmd = [pyma_path, '-c', node['pyma']['config_path']].join(' ')
 
 supervisor_service 'pyma' do
   command service_cmd

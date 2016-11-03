@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
 #
 # Recipe:: config
 # Cookbook:: pyma

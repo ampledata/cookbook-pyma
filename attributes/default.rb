@@ -37,3 +37,6 @@ default['pyma']['beacon']['status']['file'] = false
 default['pyma']['beacon']['weather'] = false
 default['pyma']['beacon']['send_every'] = 3600
 default['pyma']['beacon']['ambiguity'] = 0
+
+default['pyma']['multimon-ng']['install_path'] = '/usr/local/multimon-ng'
+default['pyma']['kalibrate-rtl']['install_path'] = '/usr/local/kalibrate-rtl'
